@@ -5,6 +5,7 @@ const counterSlice = createSlice({ //to consider this file as slice call the met
     name:'counterApp',
     //state
     initialState:{
+        //we have only one state is here . state name is value and intitial value is zero
         value:0
     },
     //actions are inside this reducers key as object
@@ -12,12 +13,14 @@ const counterSlice = createSlice({ //to consider this file as slice call the met
         //logics to update state
 
         //function or logic to increment number
-        increment:(state)=>{
-            state.value +=1
+        increment:(state, action)=>{  //passing state as argument. becoz we need value inside the state
+            //if it is a argument functn then it can only be accesed by action and value in payload
+            state.value +=action.payload // to get value inside the state, state(initialState) is an object so use . operator
         },
         //function or logic to decrement number
-        decrement:(state)=>{
-            state.value-=1
+        decrement:(state,action)=>{
+            //if it is a ragument functn then it can be accesesed by action and value in payload
+            state.value-=action.payload
         },
         //function/logic to reset
         reset:(state)=>{
