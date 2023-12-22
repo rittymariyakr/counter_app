@@ -6,10 +6,10 @@ function Counter() {
   //sate to hold the value from input box
   const [range, setRange] = useState("")
 
-  //hook to dispatch a function in action (dispatch means call)
+  //hook to dispatch a function/logic in action (dispatch means calling function/logic inside action)
   const dispatch = useDispatch()
 
-  //component can access the state by using useSelector hook
+  //component can access the updated state from store(now the updated state value(payload)  is inside the reducer) by using useSelector hook
   const count = useSelector((state)=>state.counter.value)
 
 console.log(range);

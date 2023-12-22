@@ -1,0 +1,40 @@
+1) install redux toolkit (installed to get configureStore, createSlice)
+       - search on web as redux toolkit -> fisrt link -> get started 
+       - npm install @reduxjs/toolkit
+
+2) install react redux (installed to get provider tag, useDispatch hook, useSelector hook)
+        - npm install react-redux
+
+3)create a folder for redux named 'redux' 
+
+4) inside redux folder create a js file for 'store' (store.js)
+
+5) call configureStore in store.js file (to recognize that file as store)
+        ---------------
+        - ( redux toolkit installed to create store. 
+        - to create store configureStore method is needed. 
+        - this configureStore method is inside the redux toolkit. 
+        - that's why we install redux toolkit )
+   - reducer can only update the store, so mention reducer as object  (object which can hold morethan one reducer)
+   - reducer key is predefined . give it inside the object
+
+6) store is globally accessible. to make meke it globally accessible follow the below steps:
+        - open index.js file 
+        - place <App/> component inside the provider tag <Provider><Provider/>
+        - provider tag has an attribute  called store. so give store name inside that store attribute. then the strore will be imported automatically
+        - now the store is globally accessible.
+
+6) creating slice - (slice = Action + Reducer)
+        - to create slice first create a file for silice (counterSlice.js)
+        - to consider counterSlice.js file as slice use the method createSlice()
+                                                                   -------------
+        - inside createSlice method give the following:
+                - createSlice(options: CreateSliceOptions<any, SliceCaseReducers<any>, string>): Slice<any, SliceCaseReducers<any>, string>
+                1) A function that accepts an initial state (initialState key is used for creating initial state. insiide this key give states as objects)
+                2) an object of reducers. ('reducers' is the key. actions are created inside rdeucers key (reducer and reducers key are not same))
+                        - inside the action mention logics/functions to chnage the state
+                3)and a "slice name" - ( it is not mandatory, we are not using this name anywhere)
+                4) and automatically generates action creators and action types that correspond to the reducers and state.
+        - exports these logic or functions
+                - The reducer argument is passed to createReducer().
+
